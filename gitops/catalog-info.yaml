@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: pbbtevn8g-python-gitops
+  description: This is GitOps manifest for pbbtevn8g-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=pbbtevn8g-python
+    backstage.io/kubernetes-id: pbbtevn8g-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: pbbtevn8g-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:pbbtevn8g-python
